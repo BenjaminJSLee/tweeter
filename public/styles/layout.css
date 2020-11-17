@@ -87,5 +87,6 @@ main {
   padding: 0.75em;
   border-top: 0.3em solid black;
   margin: 0.75em;
-  font-size: medium;
+  font-size: 16px;
+  font-weight: bold;
 }
