@@ -30,3 +30,53 @@ main {
   background-color: #f4f1ec;
   margin: auto;
 }
+
+article.tweet:hover {
+  box-shadow: 0.5em 0.5em #DDDDEE;
+  font-weight: 400;
+}
+
+article.tweet:hover header > *:last-child {
+  display: inline-block;
+}
+
+article.tweet {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ border: 0.15em solid black;
+ margin-top: 1em;
+ margin-bottom: 1em;
+ font-weight: 300;
+ font-size: 30px;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4em;
+  margin: 0.4em;
+}
+
+article.tweet header > *:last-child {
+  display: none;
+  color: #CCCCEE;
+}
+
+article.tweet div.tweet-body {
+  font-weight: bold;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.75em;
+  border-top: 0.3em solid black;
+  margin: 0.75em;
+  font-size: medium;
+}
