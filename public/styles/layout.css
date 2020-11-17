@@ -31,16 +31,16 @@ main {
   margin: auto;
 }
 
-article.tweet:hover {
+.tweet:hover {
   box-shadow: 0.5em 0.5em #DDDDEE;
   font-weight: 400;
 }
 
-article.tweet:hover header > *:last-child {
+.tweet:hover header > *:last-child {
   display: inline-block;
 }
 
-article.tweet {
+.tweet {
  display: flex;
  flex-direction: column;
  justify-content: space-between;
@@ -51,27 +51,36 @@ article.tweet {
  font-size: 30px;
 }
 
-article.tweet header {
+.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4em;
+  padding: 0.2em;
   margin: 0.4em;
 }
 
-article.tweet header > *:last-child {
+.tweet header div {
+  display: flex;
+  align-items: center;
+}
+
+.tweet header div img {
+  width: 2.5em;
+}
+
+.tweet header > *:last-child {
   display: none;
   color: #CCCCEE;
 }
 
-article.tweet div.tweet-body {
+.tweet div.tweet-body {
   font-weight: bold;
   padding: 0.5em;
   margin: 0.5em;
 }
 
-article.tweet footer {
+.tweet footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
