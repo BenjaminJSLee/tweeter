@@ -1,0 +1,30 @@
+textarea {
+  width: 100%;
+  height: 1.5em;
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 3px solid black;
+  margin-top: 1em;
+  resize: none;
+  outline: none;
+}
+
+button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  border: 0;
+  padding: 0.3em;
+}
+
+.tweet {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.new-tweet {
+  display: flex;
+  margin: 1em;
+  flex-direction: column;
+  justify-content: center;
+}

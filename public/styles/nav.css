@@ -1,10 +1,31 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100vw;
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
 }
-nav span {
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav > span {
+  font-size: 40px;
+}
+
+.logo {
   font-family: 'Bungee', sans-serif;
+}
+
+.arrow {
+  display: inline;
+  height: 5px;
+  color: red;
 }
