@@ -21,11 +21,13 @@ $(() => {
     const formData = $( this ).serialize();
     $.ajax('/tweets', {type: "post", data: formData})
       .then((data) => {
-        //loadTweets();
+        $textarea.val("");
+        $('.tweets').empty();
+        loadTweets();
       })
-      .catch(() => {
+      .catch((err) => {
 
-      });;
+      });
   });
 
   const createTweetElement = (tweet) => {
