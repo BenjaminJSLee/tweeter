@@ -47,14 +47,17 @@
         <form method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" type="tweet-text"></textarea>
+          <div class="error">
+            <i class="fas fa-exclamation-circle"></i>
+            <span></span>
+          </div>
           <div class="tweet-post logo">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <section class="tweets" >
-      </section>
+      <section class="tweets"></section>
     </main>
   </body>
 </html>

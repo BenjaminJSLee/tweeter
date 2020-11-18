@@ -5,19 +5,20 @@
 */
 
 $(() => {
-  
+  $('.error').hide();
   // Event listener for creating a new tweet
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
     const MAX_TWEET_LENGTH = 140;
     const $textarea = $('.new-tweet textarea');
+    const $error = $('.new-tweet .error');
+    $error.hide(100);
     if ($textarea.val() === "") {
-      alert("Error: cannot tweet an empty message");
-      return;
+      return $error.slideDown().find('span').text("Cannot tweet an empty message");
     } else if ($textarea.val().length > MAX_TWEET_LENGTH) {
-      alert("Error: tweet has exceeded its maximum character length")
-      return;
+      return $error.slideDown().find('span').text("Tweet has exceeded its maximum character length").slideDown();
     }
+
     const formData = $( this ).serialize();
     $.ajax('/tweets', {type: "post", data: formData})
       .then((data) => {
