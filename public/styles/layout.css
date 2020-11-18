@@ -71,6 +71,7 @@ main {
 
 .tweet header div img {
   width: 2.5em;
+  margin-right: 0.5em;
 }
 
 .tweet header > *:last-child {
