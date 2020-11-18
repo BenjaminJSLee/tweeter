@@ -40,6 +40,10 @@ main {
   display: inline-block;
 }
 
+.tweet:hover footer > *:last-child {
+  display: inline-block;
+}
+
 .tweet {
  display: flex;
  flex-direction: column;
@@ -89,4 +93,8 @@ main {
   margin: 0.75em;
   font-size: 16px;
   font-weight: bold;
+}
+
+.tweet footer > *:last-child {
+  display: none;
 }
