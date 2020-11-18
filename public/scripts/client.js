@@ -30,6 +30,12 @@ $(() => {
       });
   });
 
+  const escape = (str) => {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const createTweetElement = (tweet) => {
     const daysInMs = 1000 * 60 * 60 * 24;
     const daysPassed = Math.floor((Date.now() - tweet.created_at) / daysInMs);
@@ -42,7 +48,7 @@ $(() => {
         </div>
         <span>${tweet.user.handle}</span>
       </header>
-      <div class="tweet-body">${tweet.content.text}</div>
+      <div class="tweet-body">${escape(tweet.content.text)}</div>
       <footer>
         <div>${daysPassed} day${daysPassed === 1 ? "" : "s"} ago</div>
         <div>
@@ -51,8 +57,8 @@ $(() => {
           <i class="fas fa-heart"></i>
         </div>
       </footer>
-    </article>`
-    );
+    </article>
+    `);
     return $article;
   };
 
