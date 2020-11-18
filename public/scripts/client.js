@@ -45,34 +45,28 @@ const data = [
   });
 
   const createTweetElement = (tweet) => {
-    const $article = $('<article>').addClass('tweet');
-
-    const $user = $("<div>")
-      .append(`<img src="${tweet.user.avatars}" alt="prof-pic"/>`)
-      .append(`<span>${tweet.user.name}</span>`);
-
-    const $header = $("<header>")
-      .append($user)
-      .append(`<span>${tweet.user.handle}</span>`);
-
-    const $body = $(`<div>${tweet.content.text}</div>`).addClass('tweet-body');
-
-    const $icons = $('<div>')
-      .append('<i class="fas fa-flag"></i>')
-      .append('<i class="fas fa-retweet"></i>') 
-      .append('<i class="fas fa-heart"></i>'); 
-
     const daysInMs = 1000 * 60 * 60 * 24;
     const daysPassed = Math.floor((Date.now() - tweet.created_at) / daysInMs);
-
-    const $footer = $('<footer>')
-      .append(`<div>${daysPassed} day${daysPassed === 1 ? "" : "s"} ago</div>`)
-      .append($icons);
-
-    $article.append($header)
-      .append($body)
-      .append($footer);
-
+    const $article = $(`
+    <article class="tweet">
+      <header>
+        <div>
+          <img src="${tweet.user.avatars}" alt="prof-pic"/>
+          <span>${tweet.user.name}</span>
+        </div>
+        <span>${tweet.user.handle}</span>
+      </header>
+      <div class="tweet-body">${tweet.content.text}</div>
+      <footer>
+        <div>${daysPassed} day${daysPassed === 1 ? "" : "s"} ago</div>
+        <div>
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+      </footer>
+    </article>`
+    );
     return $article;
   };
 
