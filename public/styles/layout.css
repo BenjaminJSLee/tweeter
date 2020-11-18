@@ -99,3 +99,7 @@ main {
 .tweet footer > *:last-child {
   display: none;
 }
+
+.tweet footer > *:last-child * {
+  padding-right: 0.5em;
+}
