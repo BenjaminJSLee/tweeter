@@ -31,8 +31,21 @@ const data = [
 ]
 
  $(() => {
+
+  $('.new-tweet form').submit(function(event) {
+    event.preventDefault();
+    const formData = $( this ).serialize();
+    $.ajax('/tweets', {type: "post", data: formData})
+      .then((data) => {
+        
+      })
+      .catch(() => {
+
+      });;
+  });
+
   const createTweetElement = (tweet) => {
-    const $article = $("<article>").addClass('tweet');
+    const $article = $('<article>').addClass('tweet');
 
     const $user = $("<div>")
       .append(`<img src="${tweet.user.avatars}" alt="prof-pic"/>`)
@@ -44,7 +57,7 @@ const data = [
 
     const $body = $(`<div>${tweet.content.text}</div>`).addClass('tweet-body');
 
-    const $icons = $("<div>")
+    const $icons = $('<div>')
       .append('<i class="fas fa-flag"></i>')
       .append('<i class="fas fa-retweet"></i>') 
       .append('<i class="fas fa-heart"></i>'); 
@@ -52,7 +65,7 @@ const data = [
     const daysInMs = 1000 * 60 * 60 * 24;
     const daysPassed = Math.floor((Date.now() - tweet.created_at) / daysInMs);
 
-    const $footer = $("<footer>")
+    const $footer = $('<footer>')
       .append(`<div>${daysPassed} day${daysPassed === 1 ? "" : "s"} ago</div>`)
       .append($icons);
 
@@ -72,4 +85,4 @@ const data = [
 
   renderTweets(data,$('.tweets'));
 
- })
+ });

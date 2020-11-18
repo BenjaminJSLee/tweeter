@@ -101,5 +101,6 @@ main {
 }
 
 .tweet footer > *:last-child * {
+  color: #4056A1;
   padding-right: 0.5em;
 }
