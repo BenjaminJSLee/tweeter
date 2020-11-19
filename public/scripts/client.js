@@ -6,6 +6,13 @@
 
 $(() => {
   $('.error').hide();
+
+  // Event listener for hiding/showing tweeting form
+  $('#new-tweet-button').click(function(event) {
+    $('.new-tweet').slideToggle(400);
+    $('.new-tweet textarea').focus();
+  });
+
   // Event listener for creating a new tweet
   $('.new-tweet form').submit(function(event) {
     event.preventDefault();
@@ -20,9 +27,10 @@ $(() => {
     }
 
     const formData = $( this ).serialize();
-    $.ajax('/tweets', {type: "post", data: formData})
+    $.ajax('/tweets', {type: "post", data: formData, success: (d) => console.log(d)})
       .then((data) => {
         $textarea.val("");
+        $( ".new-tweet .counter" ).val(MAX_TWEET_LENGTH);
         $('.tweets').empty();
         loadTweets();
       })

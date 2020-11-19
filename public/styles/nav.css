@@ -1,4 +1,4 @@
-nav {
+nav.top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,15 +11,32 @@ nav {
   padding: 1.5em;
 }
 
-nav div {
+nav.top-bar div span {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-nav > span {
+nav.top-bar > span {
   font-size: 40px;
+}
+
+nav#return {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  font-size: 80px;
+  border-radius: 100%;
+  color: white;
+  background-color: red;
+  cursor: pointer;
 }
 
 .logo {

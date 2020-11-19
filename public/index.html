@@ -26,9 +26,11 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="top-bar">
       <span class="logo" >tweeter</span>
-      <div>Write a new tweet<i class="fas fa-angle-double-down arrow"></i></div>
+      <div>
+        <span id="new-tweet-button">Write a new tweet<i class="fas fa-angle-double-down arrow"></i></span>
+      </div>
     </nav>
 
     <header>
@@ -58,6 +60,7 @@
         </form>
       </section>
       <section class="tweets"></section>
+      <nav id="return"><i class="fas fa-angle-up"></i></nav>
     </main>
   </body>
 </html>
