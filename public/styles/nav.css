@@ -20,7 +20,7 @@ nav.top-bar div span {
 }
 
 nav.top-bar > span {
-  font-size: 40px;
+  font-size: 2em;
 }
 
 nav#return {
@@ -30,9 +30,9 @@ nav#return {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 80px;
-  height: 80px;
-  font-size: 80px;
+  width: 2em;
+  height: 2em;
+  font-size: 2em;
   border-radius: 100%;
   color: white;
   background-color: red;
