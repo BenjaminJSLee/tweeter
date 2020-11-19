@@ -43,8 +43,18 @@ nav#return {
   font-family: 'Bungee', sans-serif;
 }
 
+@keyframes bob {
+  from {
+    transform: translateY(0em);
+  }
+  to {
+    transform: translateY(0.5em);
+  }
+}
+
 .arrow {
   display: inline;
   height: 5px;
   color: red;
+  animation: 0.3s infinite alternate bob;
 }
