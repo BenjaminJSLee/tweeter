@@ -6,8 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 # Final Project
 
-!["Desktop frontpage"]()
-!["Tablet/Phone frontpage"]()
+!["Desktop frontpage"](https://github.com/BenjaminJSLee/tweeter/blob/master/docs/tweeter-desktop.png)
+!["Tablet/Phone frontpage"](https://github.com/BenjaminJSLee/tweeter/blob/master/docs/tweeter-mobile.png)
 
 ---
 
