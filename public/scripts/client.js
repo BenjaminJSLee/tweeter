@@ -29,15 +29,15 @@ $(() => {
     }
 
     const formData = $( this ).serialize();
-    $.ajax('/tweets', {type: "post", data: formData, success: (d) => console.log(d)})
-      .then((data) => {
+    $.ajax('/tweets', {type: "post", data: formData})
+      .then(() => {
         $textarea.val("");
         $( ".new-tweet .counter" ).val(MAX_TWEET_LENGTH);
         $('.tweets').empty();
         loadTweets();
       })
       .catch((err) => {
-
+        console.error(err);
       });
   });
 
@@ -105,8 +105,8 @@ $(() => {
       .then((data) => {
         renderTweets(data,$('section.tweets'));
       })
-      .catch((data) => {
-
+      .catch((err) => {
+        console.error(err);
       });
   };
 

@@ -48,7 +48,6 @@ nav#return {
 }
 
 /* Bobbing animation, used for arrow */
-
 @keyframes bob {
   from {
     transform: translateY(0em);
