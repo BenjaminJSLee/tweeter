@@ -36,28 +36,17 @@ main {
   flex-direction: column-reverse;
 }
 
-.tweet:hover {
-  box-shadow: 0.5em 0.5em #DDDDEE;
-  font-weight: 400;
-}
-
-.tweet:hover header > *:last-child {
-  display: inline-block;
-}
-
-.tweet:hover footer > *:last-child {
-  display: inline-block;
-}
+/* INDIVIDUAL TWEET STYLING */
 
 .tweet {
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- border: 0.15em solid black;
- margin-top: 1em;
- margin-bottom: 1em;
- font-weight: 300;
- font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0.15em solid black;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: 300;
+  font-size: 30px;
 }
 
 .tweet header {
@@ -110,6 +99,22 @@ main {
   padding-right: 0.5em;
 }
 
+/* DISPLAY ON HOVER */
+
+.tweet:hover {
+  box-shadow: 0.5em 0.5em #DDDDEE;
+  font-weight: 400;
+}
+
+.tweet:hover header > *:last-child {
+  display: inline-block;
+}
+
+.tweet:hover footer > *:last-child {
+  display: inline-block;
+}
+
+/* Responsive CSS code for phone users */
 @media only screen and (max-width: 600px) {
   body {
     font-size: 12px;
@@ -134,6 +139,7 @@ main {
 
 }
 
+/* Responsive CSS code for desktop users */
 @media only screen and (min-width: 1024px) {
 
   body {
@@ -160,6 +166,7 @@ main {
 
 }
 
+/* Responsive CSS code for laaarge desktop users */
 @media only screen and (min-width: 2048px) {
   html {
     background-color: #c5c2bc;

@@ -4,7 +4,9 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
+// $(document).ready(() => {}) equivalent
 $(() => {
+  // Hiding error elements initially
   $('.error').hide();
 
   // Event listener for hiding/showing tweeting form
@@ -39,12 +41,23 @@ $(() => {
       });
   });
 
+  /** Function escape takes a string and converts it to a html text, as to remove
+   * any html markup inside the string, and then returns the new "safe" html text
+   * 
+   * @param {*} str is a string
+   * @returns div.innerHTML, the text of the HTML object
+   */
   const escape = (str) => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  /** Function createTweetElement converts a tweet object into HTML markup and returns it
+   * 
+   * @param {*} tweet is an object containing information about a tweet
+   * @returns $article, a jQuery object containing HTML markup for the tweet object
+   */
   const createTweetElement = (tweet) => {
     const daysInMs = 1000 * 60 * 60 * 24;
     const daysPassed = Math.floor((Date.now() - tweet.created_at) / daysInMs);
@@ -71,6 +84,11 @@ $(() => {
     return $article;
   };
 
+  /** Function renderTweets appends all given tweets to the target Jquery object.
+   * 
+   * @param {*} tweets is an array of tweet objects, each containing information about a tweet
+   * @param {*} target is a jQuery object, consisting of the object to append the tweets to
+   */
   const renderTweets = (tweets,target) => {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -78,10 +96,14 @@ $(() => {
     }
   };
 
+  /** Function loadTweets sends a get request to the server to retrieve the tweets, and
+   * then renders every single tweet in the section.tweets container. 
+   * 
+   */
   const loadTweets = () => {
     $.ajax('/tweets', {type: 'get'})
       .then((data) => {
-        renderTweets(data,$('.tweets'));
+        renderTweets(data,$('section.tweets'));
       })
       .catch((data) => {
 

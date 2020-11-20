@@ -11,6 +11,7 @@ nav.top-bar {
   padding: 1.5em;
 }
 
+/* refers to toggle button for tweet form, but may also be used for added buttons */
 nav.top-bar div span {
   display: flex;
   flex-direction: column;
@@ -19,9 +20,12 @@ nav.top-bar div span {
   cursor: pointer;
 }
 
+/* TWEETER text logo */
 nav.top-bar > span {
   font-size: 2em;
 }
+
+/* #return refers to the "return to top" nav button */
 
 nav#return {
   display: flex;
@@ -42,6 +46,8 @@ nav#return {
 .logo {
   font-family: 'Bungee', sans-serif;
 }
+
+/* Bobbing animation, used for arrow */
 
 @keyframes bob {
   from {

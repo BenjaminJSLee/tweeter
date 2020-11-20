@@ -1,6 +1,11 @@
 
 $(() => { // shorthand for $(document).ready(() => {})
-    $('section.new-tweet textarea').on('input', function() {
+
+  // Hiding return nav button initially
+  $('nav#return').hide();
+
+  // Handling change of input in the textarea box for tweets
+  $('section.new-tweet textarea').on('input', function() {
     const MAX_TWEET_LENGTH = 140;
     const txt = $(this).val();
     const val = MAX_TWEET_LENGTH - txt.length;
@@ -13,13 +18,16 @@ $(() => { // shorthand for $(document).ready(() => {})
     $charCount.val(val);
   });
 
+  // Handling click on the return nav button (for returning to top of page)
   $('nav#return').click(function() {
     $('html, body').animate({scrollTop: 0});
     $('.new-tweet').slideDown();
     $('.new-tweet textarea').focus();
   });
 
-  $('nav#return').hide();
+  // Handling a scroll event on the document.
+  // Used for making the button that shows the tweet form and the return button
+  // disappear and reappear
   $(document).scroll(function() {
     if($(this).scrollTop() === 0) {
       $('nav#return').hide(100);
@@ -29,6 +37,6 @@ $(() => { // shorthand for $(document).ready(() => {})
       $('nav.top-bar div span').hide();
     }
   });
-
+  
 });
  
