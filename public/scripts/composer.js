@@ -5,17 +5,21 @@ $(() => { // shorthand for $(document).ready(() => {})
   $('nav#return').hide();
 
   // Handling change of input in the textarea box for tweets
+  // Specifically checks the number of characters in the textarea
+  // and handles the style if the number of characters exceeds the limit
   $('section.new-tweet textarea').on('input', function() {
     const MAX_TWEET_LENGTH = 140;
     const txt = $(this).val();
-    const val = MAX_TWEET_LENGTH - txt.length;
-    const $charCount = $(this).next().next().children().last();
-    if ( val < 0 ) {
+    const charsFromMax = MAX_TWEET_LENGTH - txt.length;
+    const $charCount = $('section.new-tweet .counter');
+
+    if ( charsFromMax < 0 ) {
       $charCount.addClass('invalid');
     } else {
       $charCount.removeClass('invalid')
     }
-    $charCount.val(val);
+    
+    $charCount.val(charsFromMax);
   });
 
   // Handling click on the return nav button (for returning to top of page)
@@ -31,10 +35,10 @@ $(() => { // shorthand for $(document).ready(() => {})
   $(document).scroll(function() {
     if($(this).scrollTop() === 0) {
       $('nav#return').hide(100);
-      $('nav.top-bar div span').show();
+      $('#show-tweet-form').show();
     } else {
       $('nav#return').show(200);
-      $('nav.top-bar div span').hide();
+      $('#show-tweet-form').hide();
     }
   });
   

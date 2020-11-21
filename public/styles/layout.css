@@ -75,6 +75,7 @@ main {
 
 .tweet div.tweet-body {
   font-weight: bold;
+  overflow-wrap: anywhere;
   padding: 0.5em;
   margin: 0.5em;
 }
